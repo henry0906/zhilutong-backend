@@ -1,0 +1,17 @@
+[railway]
+  builder = "nixpacks"
+  builderVersion = "v2"
+
+[build]
+  echo "Installing dependencies..."
+  command = "npm install"
+
+[deploy]
+  echo "Starting server..."
+  startCommand = "npm start"
+  restartPolicyType = "ON_FAILURE"
+  restartPolicyAmount = 3
+
+[environment]
+  NODE_ENV = "production"
+  PORT = "3001"
