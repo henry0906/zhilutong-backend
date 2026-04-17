@@ -1,17 +1,16 @@
 [railway]
   builder = "nixpacks"
   builderVersion = "v2"
+  runCommand = "node src/index.js"
 
-[build]
-  echo "Installing dependencies..."
-  command = "npm install"
+[nixpacks]
+  nodejs_version = "20"
 
 [deploy]
-  echo "Starting server..."
-  startCommand = "npm start"
+  startCommand = "node src/index.js"
   restartPolicyType = "ON_FAILURE"
-  restartPolicyAmount = 3
+  restartPolicyAmount = 5
+  readinessProbe = { command = ["node", "-e", "console.log('ready')"] }
 
 [environment]
   NODE_ENV = "production"
-  PORT = "3001"
