@@ -135,10 +135,10 @@ const defaultData = {
     { id: '2', contractNo: 'HT-2024-0002', name: 'G25长深高速评定合同', customerName: '江苏省交通控股集团', amount: 420000, signDate: '2024-03-15', status: 'active' }
   ],
   aiConfig: {
-    provider: 'openai',
-    model: 'gpt-4o',
-    api_endpoint: 'https://api.openai.com/v1/chat/completions',
-    api_key: ''
+    provider: 'zhipu',
+    model: 'glm-4-flash',
+    api_endpoint: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    api_key: '32c729e7c27a4a6a9df799de087aba8a.ehd9TL0BUC1tGfdB'
   },
   coefficients: {
     regionCoefficients: [

@@ -1,0 +1,17 @@
+# Render.com 部署配置
+# 这是Railway的备选方案
+
+services:
+  - type: web
+    name: zhilutong-backend
+    env: node
+    region: oregon  # 或选择 singapore（新加坡，延迟更低）
+    plan: free
+    buildCommand: npm install
+    startCommand: node src/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001

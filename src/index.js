@@ -44,6 +44,7 @@ const systemConfigRoutes = require('../routes/systemConfig')(db);
 const documentRoutes = require('../routes/document')(db);
 const exportRoutes = require('../routes/export')(db);
 const pricingRoutes = require('../routes/pricing')(db);
+const aiRoutes = require('../routes/ai')(db);
 
 // API路由
 app.use('/api/quotes', quoteRoutes);
@@ -59,6 +60,7 @@ app.use('/api/system-config', systemConfigRoutes);
 app.use('/api/document', documentRoutes);
 app.use('/api/export', exportRoutes);
 app.use('/api/pricing', pricingRoutes);
+app.use('/api/ai', aiRoutes);
 
 // 健康检查
 app.get('/api/health', (req, res) => {

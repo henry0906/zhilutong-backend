@@ -1,16 +1,13 @@
 [railway]
-  builder = "nixpacks"
+  builder = "docker"
   builderVersion = "v2"
-  runCommand = "node src/index.js"
-
-[nixpacks]
-  nodejs_version = "20"
 
 [deploy]
   startCommand = "node src/index.js"
   restartPolicyType = "ON_FAILURE"
-  restartPolicyAmount = 5
-  readinessProbe = { command = ["node", "-e", "console.log('ready')"] }
+  restartPolicyAmount = 10
+  healthCheckPath = "/api/health"
 
 [environment]
   NODE_ENV = "production"
+  PORT = "3001"
